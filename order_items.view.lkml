@@ -55,4 +55,10 @@ view: order_items {
     sql: ${total_revenue} - ${inventory_items.total_cost} ;;
     value_format_name: usd
   }
+
+  measure: average_sale_price {
+    type: average
+    sql: ${sale_price} ;;
+    value_format_name: usd
+  }
 }

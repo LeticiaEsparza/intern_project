@@ -55,6 +55,11 @@ view: inventory_items {
     type: sum
     sql: ${cost} ;;
     value_format_name: usd
+  }
 
+  measure: average_cost {
+    type: average
+    sql: ${cost} ;;
+    value_format_name: usd
   }
 }
