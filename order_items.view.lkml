@@ -42,4 +42,17 @@ view: order_items {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
   }
+
+  measure: total_revenue {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: usd
+    drill_fields: [products.category, orders.count]
+  }
+
+  measure: total_profit {
+    type: number
+    sql: ${total_revenue} - ${inventory_items.total_cost} ;;
+    value_format_name: usd
+  }
 }
